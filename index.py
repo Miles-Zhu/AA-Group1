@@ -15,22 +15,19 @@ db = os.getenv("PG_DATABASE")
 engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}")
 
 # query the data: app_reviews | apple_apps 
- 
-# query the columns of the table
-# query = """
-# SELECT column_name
-# FROM information_schema.columns
-# WHERE table_schema = 'public'
-#   AND table_name   = 'apple_apps';
-# """
-
-# query the number of rows in the table
-# query = """
-# SELECT COUNT(*) FROM app_reviews;
-# """
 
 query = """
-
+SELECT 
+    app_name,
+    rank_from_pickle,
+    review_count,
+    review_average,
+    privacy_not_collected,
+    price
+FROM apple_apps
+WHERE category = 'Medizin'
+ORDER BY review_count DESC
+LIMIT 20;
 """
 
 # read the data into a pandas dataframe

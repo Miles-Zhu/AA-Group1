@@ -62,3 +62,64 @@
 28    privacy_policy_link
 29       rank_from_pickle
 ```
+
+## 2. category
+
+### 2.1  
+
+```bash
+# SQL
+SELECT category,
+COUNT(*) AS count
+FROM apple_apps
+GROUP BY category
+ORDER BY count DESC;
+
+# Result
+                       category  count
+0        Gesundheit und Fitness  29917
+1                       Medizin  12947  ⭐️
+2                     Lifestyle   3460
+3                         Sport   2739
+4                       Bildung   2053
+5             Essen und Trinken    774
+6              Dienst­programme     665
+7                    Wirtschaft    587
+8                 Produktivität    469
+9                      Shopping    282
+10                 Unterhaltung    185
+11                       Reisen    182
+12             Nachschlagewerke    150
+13                     Finanzen    117
+14                Soziale Netze    109
+15                        Musik    109
+16                   Navigation    100
+17                       Wetter     79
+18                       Puzzle     67
+19                  Nachrichten     63
+20                       Bücher     51
+21               Foto und Video     48
+22                       Casual     44
+23                   Simulation     37
+24  Zeitungen und Zeitschriften     37
+25                      Familie     31
+26                       Action     30
+27                       Spiele     29
+28                    Abenteuer     22
+29                  Rollenspiel     20
+30         Quiz- und Denkspiele     16
+31         Emojis und Emotionen     13
+32        Sport und Aktivitäten     11
+33                    Strategie      9
+34                  Brettspiele      8
+35                   Wortspiele      4
+36              Tiere und Natur      3
+37                    Rennsport      3
+38          Comics und Cartoons      3
+39             Entwickler-Tools      3
+40            Grafik und Design      3
+41             Orte und Objekte      2
+42                      Sticker      2
+43                        Leute      1
+44                       Karten      1
+```
