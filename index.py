@@ -26,18 +26,21 @@ engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{
 #          STEP-2.review Data                       #
 #####################################################
 ## 2.1 check NULL
-query = """
-SELECT * 
-FROM apple_apps_medizin;
-"""
-
 # query = """
 # SELECT * 
-# FROM app_reviews_medizin;
+# FROM apple_apps_medizin;
 # """
+
+
+query = """
+SELECT * 
+FROM app_reviews_medizin;
+"""
 
 # read the data into a pandas dataframe
 df = pd.read_sql(query, engine)
+# print(df)
+
 msno.matrix(df)
 plt.show()
 

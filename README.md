@@ -1,6 +1,6 @@
 ## AA-Group1
 
-![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251213000757523.png)
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251213193436336.png)
 
 ## 1. data
 
@@ -77,9 +77,9 @@ ORDER BY count DESC;
 
 # Result
                        category  count
-0        Gesundheit und Fitness  29917
+0        Gesundheit und Fitness  29917  ⭐️
 1                       Medizin  12947  ⭐️
-2                     Lifestyle   3460
+2                     Lifestyle   3460  ⭐️
 3                         Sport   2739
 4                       Bildung   2053
 5             Essen und Trinken    774
