@@ -1,7 +1,6 @@
 ## AA-Group1
 
-![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251213193436336.png)
-
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251214002959766.png)
 ## 1. data
 
 > DatenBank.dump
@@ -185,3 +184,9 @@ FROM apple_apps;
 
 - rank_from_pickle !== NULL (646)
 ![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251212020527708.png)
+
+## understanding data
+
+> 评分为0，但是却有多条评论记录。
+
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251214002959766.png)
