@@ -58,15 +58,16 @@ apps = apps[
 reviews = reviews[
     reviews['rating'].between(0, 5, inclusive='both')         # 0<= Each <=5
 ]
-apps["review_count"] = reviews.groupby("app_id")["app_id"].transform("count")  # apps 表中的 review_count 和实际 reviews 表中的数据统计不符，进行统一。 
-# 备用，另一种更安全的替换 - map
-# review_counts = reviews_medizin.groupby("app_id").size()
-# apps["review_count"] = (
-#     apps["app_id"]
-#     .map(review_counts)
-#     .fillna(0)
-#     .astype(int)
-# )
+# apps 表中的 review_count 和实际 reviews 表中的数据统计不符，进行统一（先聚合再map）
+# 1️⃣ 只在 reviews 表中计算「app_id → 评论数」的映射
+review_count_map = reviews["app_id"].value_counts()
+# 2️⃣ 映射到 apps 表（临时中转）
+apps["review_count"] = (
+    apps["app_id"]
+    .map(review_count_map)
+    .fillna(0)
+    .astype(int)
+)
 
 # 拆分实验组和对照组
 categories_medizin = {
@@ -100,7 +101,7 @@ print("apps – Anzahl Spalten:", apps.shape[1])
 print("reviews – Anzahl Spalten:", reviews.shape[1])
 
 # TODO: 导出 csv 数据
-# apps_medizin.to_csv("db/apps_medizin.csv", index=False)
-# reviews_medizin.to_csv("db/reviews_medizin.csv", index=False)
-# apps_medizin_not.to_csv("db/apps_medizin_not.csv", index=False)
-# reviews_medizin_not.to_csv("db/reviews_medizin_not.csv", index=False)
+apps_medizin.to_csv("db/apps_medizin.csv", index=False)
+reviews_medizin.to_csv("db/reviews_medizin.csv", index=False)
+apps_medizin_not.to_csv("db/apps_medizin_not.csv", index=False)
+reviews_medizin_not.to_csv("db/reviews_medizin_not.csv", index=False)
