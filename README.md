@@ -128,3 +128,8 @@ ORDER BY count DESC;
 44                       Karten      1
 ```
 
+## 3.something is wrong?
+
+- review_count is not match! (fixed.)
+- review_everage &... , is not match.
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251214002959766.png)
