@@ -1,6 +1,11 @@
 ## AA-Group1
 
-![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251214002959766.png)
+- raw data
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251215123705942.png)
+
+- clean data
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251215123801726.png)
+
 ## 1. data
 
 > DatenBank.dump
@@ -123,70 +128,3 @@ ORDER BY count DESC;
 44                       Karten      1
 ```
 
-## 3. cleaning data
-
-### 3.1 app_reviews （null）
-
-```bash
-SELECT 
-    COUNT(*) FILTER (WHERE review_id IS NULL) AS missing_review_id, 
-    COUNT(*) FILTER (WHERE app_id IS NULL) AS missing_app_id, 
-    COUNT(*) FILTER (WHERE date IS NULL) AS missing_date, 
-    COUNT(*) FILTER (WHERE developerresponse IS NULL) AS missing_developerresponse, 
-    COUNT(*) FILTER (WHERE review IS NULL) AS missing_review, 
-    COUNT(*) FILTER (WHERE rating IS NULL) AS missing_rating, 
-    COUNT(*) FILTER (WHERE isedited IS NULL) AS missing_isedited, 
-    COUNT(*) FILTER (WHERE username IS NULL) AS missing_username, 
-    COUNT(*) FILTER (WHERE title IS NULL) AS missing_title 
-FROM app_reviews;
-```
-
-![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251212014804576.png)
-
-### 3.2 apple_apps （null）
-
-```bash
-SELECT 
-    COUNT(*) FILTER (WHERE app_id IS NULL) AS missing_app_id, 
-    COUNT(*) FILTER (WHERE link IS NULL) AS missing_link, 
-    COUNT(*) FILTER (WHERE app_name IS NULL) AS missing_app_name, 
-    COUNT(*) FILTER (WHERE developer_name IS NULL) AS missing_developer_name, 
-    COUNT(*) FILTER (WHERE category IS NULL) AS missing_category, 
-    COUNT(*) FILTER (WHERE price IS NULL) AS missing_price, 
-    COUNT(*) FILTER (WHERE description IS NULL) AS missing_description, 
-    COUNT(*) FILTER (WHERE similar_apps IS NULL) AS missing_similar_apps, 
-    COUNT(*) FILTER (WHERE review_count IS NULL) AS missing_review_count, 
-    COUNT(*) FILTER (WHERE review_average IS NULL) AS missing_review_average, 
-    COUNT(*) FILTER (WHERE review_one IS NULL) AS missing_review_one, 
-    COUNT(*) FILTER (WHERE review_two IS NULL) AS missing_review_two, 
-    COUNT(*) FILTER (WHERE review_three IS NULL) AS missing_review_three, 
-    COUNT(*) FILTER (WHERE review_four IS NULL) AS missing_review_four, 
-    COUNT(*) FILTER (WHERE review_five IS NULL) AS missing_review_five, 
-    COUNT(*) FILTER (WHERE iphone_version IS NULL) AS missing_iphone_version, 
-    COUNT(*) FILTER (WHERE ipad_version IS NULL) AS missing_ipad_version, 
-    COUNT(*) FILTER (WHERE ipod_version IS NULL) AS missing_ipod_version, 
-    COUNT(*) FILTER (WHERE mac_version IS NULL) AS missing_mac_version, 
-    COUNT(*) FILTER (WHERE size IS NULL) AS missing_size, 
-    COUNT(*) FILTER (WHERE languages IS NULL) AS missing_languages, 
-    COUNT(*) FILTER (WHERE age IS NULL) AS missing_age, 
-    COUNT(*) FILTER (WHERE privacy_linked IS NULL) AS missing_privacy_linked, 
-    COUNT(*) FILTER (WHERE privacy_unlinked IS NULL) AS missing_privacy_unlinked, 
-    COUNT(*) FILTER (WHERE privacy_tracked IS NULL) AS missing_privacy_tracked, 
-    COUNT(*) FILTER (WHERE privacy_not_collected IS NULL) AS missing_privacy_not_collected, 
-    COUNT(*) FILTER (WHERE version_history IS NULL) AS missing_version_history, 
-    COUNT(*) FILTER (WHERE in_app_purchases IS NULL) AS missing_in_app_purchases, 
-    COUNT(*) FILTER (WHERE privacy_policy_link IS NULL) AS missing_privacy_policy_link, 
-    COUNT(*) FILTER (WHERE rank_from_pickle IS NULL) AS missing_rank_from_pickle 
-FROM apple_apps;
-```
-
-![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251212015256715.png)
-
-- rank_from_pickle !== NULL (646)
-![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251212020527708.png)
-
-## understanding data
-
-> 评分为0，但是却有多条评论记录。
-
-![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251214002959766.png)
