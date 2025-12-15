@@ -6,8 +6,8 @@ import numpy as np
 import seaborn as sns
 import sweetviz as sv
 
-apps = pd.read_csv('datas/apple_apps_medizin.csv')
-reviews = pd.read_csv('datas/app_reviews_medizin.csv')
+apps = pd.read_csv('db/apps_medizin_not.csv')
+reviews = pd.read_csv('db/reviews_medizin_not.csv')
 
 # Merge on app_id
 df = reviews.merge(apps, on="app_id", how="left")

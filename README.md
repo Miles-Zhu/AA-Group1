@@ -4,7 +4,10 @@
 ![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251215123705942.png)
 
 - clean data
+    - Group-A  
 ![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251215123801726.png)
+    - Group_B
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251215125146150.png)
 
 ## 1. data
 
