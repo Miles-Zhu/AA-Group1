@@ -104,4 +104,4 @@ print("reviews – Anzahl Spalten:", reviews.shape[1])
 apps_medizin.to_csv("db/apps_medizin.csv", index=False)
 reviews_medizin.to_csv("db/reviews_medizin.csv", index=False)
 apps_medizin_not.to_csv("db/apps_medizin_not.csv", index=False)
-reviews_medizin_not.to_csv("db/reviews_medizin_not.csv", index=False)
+reviews_medizin_not.to_csv("db/reviews_medizin_not.csv", index=False)º

@@ -131,7 +131,11 @@ ORDER BY count DESC;
 44                       Karten      1
 ```
 
-## 3.something is wrong?
+## 3.Correlation analysis (相关性分析)
+
+![](https://cdn.jsdelivr.net/gh/Miles-Zhu/bucket@main/imgs/20251215184756534.png)
+
+## 4.something is wrong?
 
 - review_count is not match! (fixed.)
 - review_everage &... , is not match.
