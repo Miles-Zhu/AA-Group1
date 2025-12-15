@@ -196,3 +196,18 @@ ORDER BY price_eur DESC;
 DELETE FROM app_reviews_medizin
 WHERE review = 'None'
    OR review = 'null';
+
+
+# 筛选出评论数 > 1 的 APP
+SELECT
+    a.app_id,
+    a.app_name,
+    COUNT(r.app_id) AS review_count
+FROM apple_apps_medizin a
+LEFT JOIN app_reviews_medizin r
+    ON a.app_id = r.app_id
+GROUP BY
+    a.app_id,
+    a.app_name
+HAVING COUNT(r.app_id) > 0
+ORDER BY review_count ASC;
